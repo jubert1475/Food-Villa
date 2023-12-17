@@ -6,18 +6,14 @@ import CardItem from "./CardItem";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { filterData } from "./utils/helper";
 // const searchText="KFC"
-function filterData (allRestuarantListData, searchText) {
-  const FilterData = allRestuarantListData.filter((restuarant) => 
-  restuarant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()))
- 
-  return FilterData;
-}
+
 
 
 
 const Body = () => {
-  const [searchText, setSearchText] = useState("KFC");
+  const [searchText, setSearchText] = useState("");
   console.log("outside useEffect")
   const[filteredRestuarantListData, setFilteredRestaurantListData]=useState([]);
   const[allRestuarantListData, setAllRestaurantListData]=useState([]);
@@ -80,13 +76,13 @@ const Body = () => {
       </div>
       
       
-      <div className="restaurant-list">
+      <div className="restaurant-list"  >
       
   
         {(filteredRestuarantListData.length==0 ) ? <h1>No restaurant matches...</h1>:
         filteredRestuarantListData.map((restuarant) => {
           return <Link to={"restaurant/"+restuarant.info.id}>
-           <CardItem {...restuarant.info} key={restuarant.info.id} />
+           <CardItem {...restuarant.info}  key={restuarant.info.id} />
           </Link>
         })}
       </div>

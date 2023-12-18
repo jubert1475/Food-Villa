@@ -72,7 +72,7 @@
       -More info
 
       */
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Footer from "./src/components/Footer";
@@ -83,6 +83,10 @@ import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
 import RestuarantMenu from "./src/components/RestuarantMenu";
 import LoginPage from "./src/components/LoginPage";
+//import Cart from "./src/components/Cart";
+
+//Lazy Loading
+const Cart= lazy(()=>import("./src/components/Cart"));
 
 const App = () => {
   return (
@@ -119,6 +123,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestuarantMenu />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
         errorElement: <Error />,
       }
       

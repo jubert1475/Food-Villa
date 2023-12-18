@@ -6,37 +6,40 @@ import CardItem from "./CardItem";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { filterData } from "./utils/helper";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 // const searchText="KFC"
 
 
 
 
 const Body = () => {
+ 
   const [searchText, setSearchText] = useState("");
-  console.log("outside useEffect")
   const[filteredRestuarantListData, setFilteredRestaurantListData]=useState([]);
   const[allRestuarantListData, setAllRestaurantListData]=useState([]);
-  
+ 
   useEffect(()=>{
     //call API
     getRestaurants();
-  }
+  },[])
+
   
-  ,[])
 
   async function getRestaurants(){
     const data= await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.8222363&lng=74.6508894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
 
-    
     const json =await data.json();
-    
-    console.log(json);
     setAllRestaurantListData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurantListData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     console.log(allRestuarantListData);
+  }
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return<h1>Opps...! offline</h1>
   }
 
   //COnditonal Rendering:
@@ -45,8 +48,10 @@ const Body = () => {
 
   //# If allRestuarantListData is not there we will get rendering error to fix it we shud use below syntax.
   //it is called Early return or 
+  
  
   if (!allRestuarantListData) return  null;
+  
   
 
   return (allRestuarantListData.length=== 0 ) ? <Shimmer/> : (
@@ -76,13 +81,13 @@ const Body = () => {
       </div>
       
       
-      <div className="restaurant-list"  >
+      <div className="restaurantList"  >
       
   
         {(filteredRestuarantListData.length==0 ) ? <h1>No restaurant matches...</h1>:
         filteredRestuarantListData.map((restuarant) => {
-          return <Link to={"restaurant/"+restuarant.info.id}>
-           <CardItem {...restuarant.info}  key={restuarant.info.id} />
+          return <Link to={"restaurant/"+ restuarant?.info?.id}>
+           <CardItem {...restuarant.info}  key={restuarant?.info?.id} />
           </Link>
         })}
       </div>

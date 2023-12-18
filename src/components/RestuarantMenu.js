@@ -1,15 +1,11 @@
 import { IMG_CDN_URL } from "./Config";
-import  useRestuarantMenu  from "../hooks/useRestuarantMenu";
+import  useRestuarantMenu  from "../utils/useRestuarantMenu";
 import {useParams} from "react-router-dom"
 
 const RestuarantMenu = () => {
   const  params = useParams();
-    const {id}=params;
-
-   const restaurant=useRestuarantMenu(id);
-   
-  console.log(restaurant)
-
+  const {id}=params;
+  const restaurant=useRestuarantMenu(id);
   return (
     <>
       <div>

@@ -47,7 +47,7 @@
   width: 100%;
 }
 
-.restaurant-list{
+.restaurantList{
   display: flex;
   flex-flow: row wrap;
   

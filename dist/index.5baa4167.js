@@ -3019,8 +3019,7 @@ var _footerDefault = parcelHelpers.interopDefault(_footer);
 var _body = require("./src/components/Body");
 var _bodyDefault = parcelHelpers.interopDefault(_body);
 var _reactRouterDom = require("react-router-dom");
-var _about = require("./src/components/About");
-var _aboutDefault = parcelHelpers.interopDefault(_about);
+//import About from "./src/components/About";
 var _error = require("./src/components/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _contact = require("./src/components/Contact");
@@ -3029,57 +3028,75 @@ var _restuarantMenu = require("./src/components/RestuarantMenu");
 var _restuarantMenuDefault = parcelHelpers.interopDefault(_restuarantMenu);
 var _loginPage = require("./src/components/LoginPage");
 var _loginPageDefault = parcelHelpers.interopDefault(_loginPage);
+var _shimmer = require("./src/components/Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+//import Cart from "./src/components/Cart";
+//Lazy Loading
+const Cart_1 = /*#__PURE__*/ (0, _react.lazy)(()=>require("48c2b0147bc0cacb"));
+_c = Cart_1;
+const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("db290962bd45ed37"));
+_c1 = About;
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 90,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 91,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 92,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginPageDefault.default), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 93,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.StrictMode), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 98,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 99,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 100,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "app.js",
+            lineNumber: 97,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
 };
-_c = App;
+_c2 = App;
 const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 101,
+            lineNumber: 109,
             columnNumber: 14
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 102,
+            lineNumber: 110,
             columnNumber: 19
         }, undefined),
         children: [
             {
                 path: "/about",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Loading About Page"
+                    }, void 0, false, void 0, void 0),
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
+                        fileName: "app.js",
+                        lineNumber: 116,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 106,
-                    columnNumber: 18
+                    lineNumber: 115,
+                    columnNumber: 11
                 }, undefined),
                 errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 107,
+                    lineNumber: 119,
                     columnNumber: 23
                 }, undefined)
             },
@@ -3087,12 +3104,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 111,
+                    lineNumber: 123,
                     columnNumber: 18
                 }, undefined),
                 errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 112,
+                    lineNumber: 124,
                     columnNumber: 23
                 }, undefined)
             },
@@ -3100,12 +3117,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 116,
+                    lineNumber: 128,
                     columnNumber: 18
                 }, undefined),
                 errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 117,
+                    lineNumber: 129,
                     columnNumber: 23
                 }, undefined)
             },
@@ -3113,12 +3130,32 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarantMenuDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 121,
+                    lineNumber: 133,
                     columnNumber: 18
                 }, undefined),
                 errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 122,
+                    lineNumber: 134,
+                    columnNumber: 23
+                }, undefined)
+            },
+            {
+                path: "/cart",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Cart_1, {}, void 0, false, {
+                        fileName: "app.js",
+                        lineNumber: 140,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 139,
+                    columnNumber: 11
+                }, undefined),
+                errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 143,
                     columnNumber: 23
                 }, undefined)
             }
@@ -3130,18 +3167,20 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "app.js",
-    lineNumber: 131,
+    lineNumber: 151,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "App");
+var _c, _c1, _c2;
+$RefreshReg$(_c, "Cart_1");
+$RefreshReg$(_c1, "About");
+$RefreshReg$(_c2, "App");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/components/Header":"hsJbF","./src/components/Footer":"8pPOA","./src/components/Body":"8yaV8","react-router-dom":"9xmpe","./src/components/About":"9R1Eu","./src/components/Error":"kvula","./src/components/Contact":"cgAOG","./src/components/RestuarantMenu":"iOgD7","./src/components/LoginPage":"bs4mz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/components/Header":"hsJbF","./src/components/Footer":"8pPOA","./src/components/Body":"8yaV8","react-router-dom":"9xmpe","./src/components/Error":"kvula","./src/components/Contact":"cgAOG","./src/components/RestuarantMenu":"iOgD7","./src/components/LoginPage":"bs4mz","./src/components/Shimmer":"g6ZGj","48c2b0147bc0cacb":"dLzw8","db290962bd45ed37":"8cggd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27340,6 +27379,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _useOnline = require("../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _loginPage = require("./LoginPage");
+var _loginPageDefault = parcelHelpers.interopDefault(_loginPage);
 var _s = $RefreshSig$();
 const Logo = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -27350,12 +27393,12 @@ const Logo = ()=>{
             src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnm9yURneW64_3Ci5fRm1dsvfCIiyj2Ox8KQ&usqp=CAU"
         }, void 0, false, {
             fileName: "src/components/Header.js",
-            lineNumber: 7,
+            lineNumber: 8,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Header.js",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };
@@ -27363,96 +27406,116 @@ _c = Logo;
 const Header = ()=>{
     _s();
     const [userLogin, setUserLogin] = (0, _react.useState)(true);
+    const isOnline = (0, _useOnlineDefault.default)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "header",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Logo, {}, void 0, false, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "nav-items",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/about",
-                                    children: "About us"
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: "/about",
+                                        children: "About us"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 30,
+                                        columnNumber: 13
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 25,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 24,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/account",
-                                    children: "My Account"
+                                    lineNumber: 29,
+                                    columnNumber: 11
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: "/contact",
+                                        children: "contact us"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 33,
+                                        columnNumber: 13
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 28,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 27,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/contact",
-                                    children: "contact us"
+                                    lineNumber: 32,
+                                    columnNumber: 11
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: "/cart",
+                                        children: "Cart"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 36,
+                                        columnNumber: 13
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 31,
-                                    columnNumber: 15
+                                    lineNumber: 35,
+                                    columnNumber: 11
                                 }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 30,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Header.js",
-                        lineNumber: 23,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 28,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: isOnline ? "\uD83D\uDFE2" : "\uD83D\uDD34"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 40,
+                            columnNumber: 9
+                        }, undefined),
+                        userLogin ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "LogInBtn",
+                            onClick: ()=>{
+                                setUserLogin(false);
+                            },
+                            children: "Login"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 42,
+                            columnNumber: 11
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "LogInBtn",
+                            onClick: ()=>{
+                                setUserLogin(true);
+                            },
+                            children: "Logout"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 46,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 22,
-                    columnNumber: 9
-                }, undefined),
-                userLogin ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>setUserLogin(false),
-                    children: "Login"
-                }, void 0, false, {
-                    fileName: "src/components/Header.js",
-                    lineNumber: 36,
-                    columnNumber: 11
-                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>setUserLogin(true),
-                    children: "Logout"
-                }, void 0, false, {
-                    fileName: "src/components/Header.js",
-                    lineNumber: 38,
-                    columnNumber: 11
+                    lineNumber: 27,
+                    columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Header.js",
-            lineNumber: 20,
+            lineNumber: 23,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(Header, "s+5Gz+hSWsucnXnhSKuCcaz8e1w=");
+_s(Header, "QcB5e1M4uGnEi4PrYydhb00AiJA=", false, function() {
+    return [
+        (0, _useOnlineDefault.default)
+    ];
+});
 _c1 = Header;
 exports.default = Header;
 var _c, _c1;
@@ -27464,7 +27527,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../utils/useOnline":"74Yls","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./LoginPage":"bs4mz"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.20.1
  *
@@ -33840,7 +33903,45 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"km3Ru":[function(require,module,exports) {
+},{}],"74Yls":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$03b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    const handleOnline = ()=>{
+        setIsOnline(true);
+    };
+    const handleOffline = ()=>{
+        setIsOnline(false);
+    };
+    (0, _react.useEffect)(()=>{
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOffline);
+        return ()=>{
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOffline);
+        };
+    }, []);
+    return isOnline;
+};
+_s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
+exports.default = useOnline;
+
+  $parcel$ReactRefreshHelpers$03b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -33978,38 +34079,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"8pPOA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc7c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _loginPage = require("./LoginPage");
-var _loginPageDefault = parcelHelpers.interopDefault(_loginPage);
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Footer"
-    }, void 0, false, {
-        fileName: "src/components/Footer.js",
-        lineNumber: 4,
-        columnNumber: 12
-    }, undefined);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./LoginPage":"bs4mz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bs4mz":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"bs4mz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5263 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34025,126 +34095,81 @@ const LoginPage = ()=>{
     _s();
     const formik = (0, _formik.useFormik)({
         initialValues: {
-            name: "",
-            lastName: "",
             email: " ",
             password: " "
         }
     });
     console.log("Form Vaues", formik.values);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "Sign Up..!"
-                }, void 0, false, {
-                    fileName: "src/components/LoginPage.js",
-                    lineNumber: 19,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/LoginPage.js",
-                lineNumber: 18,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                id: "Form",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                        id: "Form",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Name"
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 23,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                id: "name",
-                                type: "text",
-                                name: "name",
-                                onChange: formik.handleChange,
-                                value: formik.values.name
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 24,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Last Name"
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 31,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                id: "lastname",
-                                type: "text",
-                                name: "lastname",
-                                onChange: formik.handleChange,
-                                value: formik.values.lastName
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 32,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "E-Mail"
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 39,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                id: "email",
-                                type: "email",
-                                name: "email",
-                                onChange: formik.handleChange,
-                                value: formik.values.email
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 40,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Password"
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 47,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                id: "password",
-                                type: "tex ",
-                                name: "password",
-                                onChange: formik.handleChange,
-                                value: formik.values.password
-                            }, void 0, false, {
-                                fileName: "src/components/LoginPage.js",
-                                lineNumber: 48,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/LoginPage.js",
-                        lineNumber: 22,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        children: "Submit"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "E-Mail"
                     }, void 0, false, {
                         fileName: "src/components/LoginPage.js",
-                        lineNumber: 57,
-                        columnNumber: 9
+                        lineNumber: 35,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        id: "email",
+                        type: "email",
+                        name: "email",
+                        onChange: formik.handleChange,
+                        value: formik.values.email
+                    }, void 0, false, {
+                        fileName: "src/components/LoginPage.js",
+                        lineNumber: 36,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Password"
+                    }, void 0, false, {
+                        fileName: "src/components/LoginPage.js",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        id: "password",
+                        type: "password",
+                        name: "password",
+                        placeholder: "Password",
+                        onChange: formik.handleChange,
+                        value: formik.values.password
+                    }, void 0, false, {
+                        fileName: "src/components/LoginPage.js",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            style: {
+                                margin: "5px"
+                            },
+                            children: "Login"
+                        }, void 0, false, {
+                            fileName: "src/components/LoginPage.js",
+                            lineNumber: 53,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/LoginPage.js",
+                        lineNumber: 52,
+                        columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/LoginPage.js",
-                lineNumber: 21,
-                columnNumber: 7
+                lineNumber: 18,
+                columnNumber: 9
             }, undefined)
-        ]
-    }, void 0, true);
+        }, void 0, false, {
+            fileName: "src/components/LoginPage.js",
+            lineNumber: 17,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
 };
 _s(LoginPage, "B/4rI4IXClQ7sG7psKj+pOuRe5Q=", false, function() {
     return [
@@ -39071,7 +39096,38 @@ var _baseCloneJsDefault = parcelHelpers.interopDefault(_baseCloneJs);
 }
 exports.default = cloneDeep;
 
-},{"./_baseClone.js":"dBps5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
+},{"./_baseClone.js":"dBps5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8pPOA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc7c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _loginPage = require("./LoginPage");
+var _loginPageDefault = parcelHelpers.interopDefault(_loginPage);
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Footer"
+    }, void 0, false, {
+        fileName: "src/components/Footer.js",
+        lineNumber: 4,
+        columnNumber: 12
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./LoginPage":"bs4mz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8yaV8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39089,40 +39145,47 @@ var _cardItemDefault = parcelHelpers.interopDefault(_cardItem);
 var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _reactRouterDom = require("react-router-dom");
-var _helper = require("./utils/helper");
+var _helper = require("../utils/helper");
+var _useOnline = require("../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
 var _s = $RefreshSig$();
-// const searchText="KFC"
 const Body = ()=>{
     _s();
-    const [searchText, setSearchText] = (0, _react.useState)("KFC");
-    console.log("outside useEffect");
+    const [searchText, setSearchText] = (0, _react.useState)("");
     const [filteredRestuarantListData, setFilteredRestaurantListData] = (0, _react.useState)([]);
     const [allRestuarantListData, setAllRestaurantListData] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        //call API
-        getRestaurants();
+        getRestaurants(); //call API
     }, []);
     async function getRestaurants() {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.8222363&lng=74.6508894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log(json);
         setAllRestaurantListData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurantListData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(allRestuarantListData);
     }
+    const isOnline = (0, _useOnlineDefault.default)();
+    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Opps...! offline"
+    }, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 39,
+        columnNumber: 12
+    }, undefined);
     //COnditonal Rendering:
     //IF restaurant is empty==>shimmer Ui
     //If restaurant has data==> actual data UI
     //# If allRestuarantListData is not there we will get rendering error to fix it we shud use below syntax.
-    //it is called Early return or 
+    //it is called Early return or
     if (!allRestuarantListData) return null;
     return allRestuarantListData.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
         lineNumber: 52,
-        columnNumber: 49
+        columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "searchContainer",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "searchBox",
@@ -39133,7 +39196,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 55,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -39147,40 +39210,40 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "restaurant-list",
+                className: "restaurantList",
                 children: filteredRestuarantListData.length == 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: "No restaurant matches..."
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 82,
-                    columnNumber: 52
+                    lineNumber: 81,
+                    columnNumber: 11
                 }, undefined) : filteredRestuarantListData.map((restuarant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "restaurant/" + restuarant.info.id,
+                        to: "restaurant/" + restuarant?.info?.id,
                         children: /*#__PURE__*/ (0, _react.createElement)((0, _cardItemDefault.default), {
                             ...restuarant.info,
-                            key: restuarant.info.id,
+                            key: restuarant?.info?.id,
                             __source: {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 85,
-                                columnNumber: 12
+                                lineNumber: 86,
+                                columnNumber: 17
                             },
                             __self: undefined
                         })
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 84,
-                        columnNumber: 18
+                        lineNumber: 85,
+                        columnNumber: 15
                     }, undefined);
                 })
             }, void 0, false, {
@@ -39191,7 +39254,11 @@ const Body = ()=>{
         ]
     }, void 0, true);
 };
-_s(Body, "yTPyID7R3omtUEolvKRWumOtVzw=");
+_s(Body, "ZmcvkOLIO8EObzs1QNY1KmgtuVc=", false, function() {
+    return [
+        (0, _useOnlineDefault.default)
+    ];
+});
 _c = Body;
 exports.default = Body;
 var _c;
@@ -39202,7 +39269,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CardItem":"cPX3Y","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","./utils/helper":"9Lcuw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cPX3Y":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CardItem":"cPX3Y","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cPX3Y":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f8fb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39228,28 +39295,40 @@ const CardItem = ({ name, cloudinaryImageId, cuisines, avgRating })=>{
                 lineNumber: 9,
                 columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: name
-            }, void 0, false, {
-                fileName: "src/components/CardItem.js",
-                lineNumber: 16,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: cuisines.join(",")
-            }, void 0, false, {
-                fileName: "src/components/CardItem.js",
-                lineNumber: 17,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
                 children: [
-                    avgRating,
-                    " stars"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        className: "res-name",
+                        children: name
+                    }, void 0, false, {
+                        fileName: "src/components/CardItem.js",
+                        lineNumber: 17,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                        className: "rating",
+                        children: [
+                            avgRating,
+                            " stars"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/CardItem.js",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        className: "res-cuisine",
+                        children: cuisines.join(",")
+                    }, void 0, false, {
+                        fileName: "src/components/CardItem.js",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/CardItem.js",
-                lineNumber: 18,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined)
         ]
@@ -39929,7 +40008,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Shimmer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
+        className: "restaurantList",
         children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "card-item_s"
             }, index, false, {
@@ -39953,7 +40032,7 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9Lcuw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
 //Search Function
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -39963,36 +40042,7 @@ function filterData(allRestuarantListData, searchText) {
     return FilterData;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "About us is page"
-    }, void 0, false, {
-        fileName: "src/components/About.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kvula":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40097,7 +40147,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _config = require("./Config");
-var _useRestuarantMenu = require("../hooks/useRestuarantMenu");
+var _useRestuarantMenu = require("../utils/useRestuarantMenu");
 var _useRestuarantMenuDefault = parcelHelpers.interopDefault(_useRestuarantMenu);
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
@@ -40106,7 +40156,6 @@ const RestuarantMenu = ()=>{
     const params = (0, _reactRouterDom.useParams)();
     const { id } = params;
     const restaurant = (0, _useRestuarantMenuDefault.default)(id);
-    console.log(restaurant);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40118,7 +40167,7 @@ const RestuarantMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/RestuarantMenu.js",
-                        lineNumber: 16,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -40128,7 +40177,7 @@ const RestuarantMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/RestuarantMenu.js",
-                        lineNumber: 17,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -40136,7 +40185,7 @@ const RestuarantMenu = ()=>{
                         src: (0, _config.IMG_CDN_URL) + restaurant?.cloudinaryImageId
                     }, void 0, false, {
                         fileName: "src/components/RestuarantMenu.js",
-                        lineNumber: 18,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -40146,13 +40195,13 @@ const RestuarantMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/RestuarantMenu.js",
-                        lineNumber: 22,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestuarantMenu.js",
-                lineNumber: 15,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40160,12 +40209,12 @@ const RestuarantMenu = ()=>{
                     children: "menu:"
                 }, void 0, false, {
                     fileName: "src/components/RestuarantMenu.js",
-                    lineNumber: 25,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/RestuarantMenu.js",
-                lineNumber: 24,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined)
         ]
@@ -40187,11 +40236,11 @@ $RefreshReg$(_c, "RestuarantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Config":"4dy05","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../hooks/useRestuarantMenu":"4DIL8","react-router-dom":"9xmpe"}],"4DIL8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c6c4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","./Config":"4dy05","../utils/useRestuarantMenu":"8WmX4","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8WmX4":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f36c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c6c4.prelude(module);
+$parcel$ReactRefreshHelpers$f36c.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -40217,11 +40266,120 @@ const useRestuarantMenu = (id)=>{
 _s(useRestuarantMenu, "xTHIp85kevrNjFQ3g5ZiTLKWCkg=");
 exports.default = useRestuarantMenu;
 
-  $parcel$ReactRefreshHelpers$c6c4.postlude(module);
+  $parcel$ReactRefreshHelpers$f36c.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["adBpN","1xC6H","igcvL"], "igcvL", "parcelRequire9752")
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dLzw8":[function(require,module,exports) {
+module.exports = require("eabc36f60a0f16bf")(require("3e6f76e841faa085").getBundleURL("1G2bZ") + "Cart.9e76ab78.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("h8J3U"));
+
+},{"eabc36f60a0f16bf":"61B45","3e6f76e841faa085":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8cggd":[function(require,module,exports) {
+module.exports = require("9e040f466d1f0ff1")(require("724c5eca9d8615ea").getBundleURL("1G2bZ") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("9R1Eu"));
+
+},{"9e040f466d1f0ff1":"61B45","724c5eca9d8615ea":"lgJ39"}]},["adBpN","1xC6H","igcvL"], "igcvL", "parcelRequire9752")
 
 //# sourceMappingURL=index.5baa4167.js.map

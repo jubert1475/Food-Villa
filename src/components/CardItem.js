@@ -13,9 +13,14 @@ const CardItem = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
             cloudinaryImageId
           }
         />
-        <h2>{name}</h2>
-        <h3>{cuisines.join(",")}</h3>
-        <h4>{avgRating} stars</h4>
+        <div className="res-container">
+        <h2 className="res-name">{name}</h2>
+        <h4 className="rating">{avgRating} stars</h4>
+        <h3 className="res-cuisine">{cuisines.join(",")}</h3>
+    
+
+        </div>
+        
       </div>
     );
   };

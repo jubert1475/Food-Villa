@@ -4,6 +4,8 @@ const useRestuarantMenu = (id) =>{
 
   //shud be dynamic as per id.
   const [restaurant, setRestaurant] = useState(null);
+  const [menu,setMenu]=useState(null);
+
 
 
 
@@ -11,6 +13,7 @@ const useRestuarantMenu = (id) =>{
   useEffect(() => {
     getRestaurantMenu();
   }, []);
+ 
 
   async function getRestaurantMenu() {
     const data = await fetch(
@@ -19,9 +22,12 @@ const useRestuarantMenu = (id) =>{
     );
     const json = await data.json();
     setRestaurant(json?.data?.cards[0]?.card?.card?.info);
+    
+    
   }
   //return Resto List
   return restaurant;
+ 
 }
 
 export default useRestuarantMenu;

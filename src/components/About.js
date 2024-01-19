@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-const Section = ({ title, desc, visible, setVisible }) => {
+const Section = ({ title, desc, visible,setVisible, currentSection }) => {
   
   return (
     <div className="about_section">
       <h3>{title}</h3>
       {visible ? (
         <>
-        <button onClick={() => setVisible(false)}>Hide</button>
+        <button onClick={() => setVisible("")}>Hide</button>
         <p>{desc}</p>
         </>
         
       ) : (
-        <button onClick={() => setVisible(true)}>show</button>
+        <button onClick={() => setVisible(currentSection)}>show</button>
       )}
 
       
@@ -23,6 +23,8 @@ const Section = ({ title, desc, visible, setVisible }) => {
 const About = () => {
   const [visibleSection, setVisibleSection] = useState("");
 
+  
+
   return (
     <>
       <h1>Details</h1>
@@ -31,9 +33,13 @@ const About = () => {
         desc={
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         }
+        currentSection="about"
         visible={visibleSection==="about"}
-        setVisible={()=>{
-          setVisibleSection("about")
+        // setVisibleShow={()=>{
+        //   setVisibleSection("about")
+        // }}
+        setVisible={(abc)=>{
+          setVisibleSection(abc)
         }}
       />
       <Section
@@ -41,9 +47,14 @@ const About = () => {
         desc={
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         }
-        visible={visibleSection==="team"}
-        setVisible={()=>{
-          setVisibleSection("team")
+        
+        currentSection="Team"
+        visible={visibleSection==="Team"}
+        setVisibleShow={()=>{
+          setVisibleSection("Team")
+        }}
+        setVisible={(abc)=>{
+          setVisibleSection(abc)
         }}
       />
 
@@ -52,9 +63,13 @@ const About = () => {
         desc={
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         }
-        visible={visibleSection==="services"}
-        setVisible={()=>{
-          setVisibleSection("services")
+        currentSection="Services"
+        visible={visibleSection==="Services"}
+        setVisibleShow={()=>{
+          setVisibleSection("Services")
+        }}
+        setVisible={(abc)=>{
+          setVisibleSection(abc)
         }}
       />
 
@@ -63,9 +78,13 @@ const About = () => {
         desc={
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         }
-        visible={visibleSection==="faq"}
-        setVisible={()=>{
-          setVisibleSection("faq")
+        currentSection="FAQ"
+        visible={visibleSection==="FAQ"}
+        setVisibleShow={()=>{
+          setVisibleSection("FAQ")
+        }}
+        setVisible={(abc)=>{
+          setVisibleSection(abc)
         }}
       />
     </>

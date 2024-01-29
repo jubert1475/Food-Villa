@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import LoginPage from "./LoginPage";
+import userContext from "../utils/userContex";
 const Logo = () => {
   return (
     <a href="/">
@@ -17,6 +18,8 @@ const Logo = () => {
 const Header = () => {
   const [userLogin, setUserLogin] = useState(true);
   const isOnline = useOnline();
+
+  const {user}=useContext(userContext);
 
   return (
     <>
@@ -38,6 +41,8 @@ const Header = () => {
         </ul>
 
         <h1>{isOnline ? "🟢" : "🔴"}</h1>
+        {user.name}--
+        {user.email}
         {userLogin ? (
           <button className="LogInBtn" onClick={()=>{setUserLogin(false)}  } >
             Login

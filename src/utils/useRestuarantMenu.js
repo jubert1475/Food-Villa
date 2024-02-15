@@ -18,14 +18,26 @@ const useRestuarantMenu = (id) => {
     );
     const json = await data.json();
     setRestaurant(json?.data?.cards[0]?.card?.card?.info);
-    setMenu(json?.data?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
-    
+    setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+   
   }
-  console.log(menu)
+
+    console.log(menu)
+    const menuList =  Object.values(menu).map(item=>item?.card?.info)
+    
+
+  
+
+return {restaurant, menuList}
+  //console.log((menuList));
+
+  
+ //const list= menu.map((menuItemm)=>{menuItemm?.card?.info?.name})
+ 
   //const menuList= menu.map((itemName)=>{itemName.card.info.name});
   //console.log(menuList);
   //return Resto List
-  return (restaurant) ;
+
   
   
 };

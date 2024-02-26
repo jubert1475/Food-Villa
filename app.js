@@ -10,12 +10,14 @@ import Contact from "./src/components/Contact";
 import RestuarantMenu from "./src/components/RestuarantMenu";
 import Shimmer from "./src/components/Shimmer";
 import userContext from "./src/utils/userContex";
+import SignUpPage from "./src/components/SignUpPage"
 //import Cart from "./src/components/Cart";
 
 //Lazy Loading
 const Cart_1 = lazy(() => import("./src/components/Cart"));
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
+import LoginPage from "./src/components/LoginPage";
 
 const About = lazy(() => import("./src/components/About"));
 
@@ -83,6 +85,16 @@ const appRouter = createBrowserRouter([
         ),
         errorElement: <Error />,
       },
+      {
+        path: "/cart/login",
+        element: <LoginPage />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/cart/signUp",
+        element: <SignUpPage />,
+        errorElement: <Error />,
+      }
     ],
   },
 ]);

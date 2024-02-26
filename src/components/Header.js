@@ -46,12 +46,13 @@ const Header = () => {
         </ul>
 
         <h1>{isOnline ? "🟢" : "🔴"}</h1>
-        {user.name}--
-        {user.email}
+        
         {userLogin ? (
+           <Link to="/cart/login">
           <button className="LogInBtn" onClick={()=>{setUserLogin(false)}  } >
-            Login
-          </button>
+           Login
+            
+          </button></Link>
         ) : (
           <button className="LogInBtn" onClick={()=>{setUserLogin(true)}}>
             Logout

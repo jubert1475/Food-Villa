@@ -13,23 +13,22 @@ const useRestuarantMenu = (id) => {
 
   async function getRestaurantMenu() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.8523973&lng=74.5814773&restaurantId=" +
-        id
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.8523973&lng=74.5814773&restaurantId="+id
     );
     const json = await data.json();
-    setRestaurant(json?.data?.cards[0]?.card?.card?.info);
-    setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+    setRestaurant(json?.data?.cards[2]?.card?.card?.info);
+    setMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
    
   }
 
     console.log(menu)
-    const menuList =  Object.values(menu).map(item=>item?.card?.info)
+    
     
 
   
 
-return {restaurant, menuList}
-  //console.log((menuList));
+return {restaurant,menu}
+  
 
   
  //const list= menu.map((menuItemm)=>{menuItemm?.card?.info?.name})

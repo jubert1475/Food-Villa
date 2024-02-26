@@ -1,10 +1,21 @@
 import { useSelector } from "react-redux";
+import useRestuarantMenu from "../utils/useRestuarantMenu";
+import LoginPage from "./LoginPage";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const [loginPage, setLoginPage]= useState(false)
+  const loginHandler = () => {
+    return (
+      setLoginPage(!loginPage)
+    );
+  };
+
   console.log(cartItems);
   return (
-    <>
+    <div className="cart">
       <div className="customer_details">
         <div>
           <div>
@@ -14,8 +25,10 @@ const Cart = () => {
               up.
             </h4>
           </div>
-          <div>
+          <div> 
+            <Link to="/cart/login">
             <button
+              
               style={{
                 margin: "20px",
                 border: "1px solid green",
@@ -26,35 +39,41 @@ const Cart = () => {
               <div>Have an account?</div>
               <div>LOG IN</div>
             </button>
+            </Link>
+            <Link to="/cart/signUp">
             <button
               style={{
                 margin: "20px",
                 border: "1px solid green",
                 background: "green",
                 padding: "5px",
-                color:"white"
+                color: "white",
               }}
             >
               <div>New To Food Villa?</div>
               <div>SIGN UP</div>
-            </button>
+            </button></Link>
+            <div>
+            {loginPage && <LoginPage />}
+            </div>
           </div>
         </div>
-        <img
-          className="menu_logo"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_147,h_140/Image-login_btpq7r"
-        />
       </div>
-      <div></div>
 
       <div className="checkout_card">
-        <ul>
-          {cartItems.map((menuItem) => (
-            <h3>{menuItem}</h3>
-          ))}
-        </ul>
+        <h2 style={{ margin: "10px",padding:"10px", borderBottom:"1px solid black" }}>Your Order Details:</h2>
+
+        <div>
+          <ul style={{ margin: "10px" }}>
+            {cartItems.map((menuItem) => (
+              <h5>
+                {menuItem.name} - {menuItem.price / 100}RS
+              </h5>
+            ))}
+          </ul>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Cart;

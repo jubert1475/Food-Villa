@@ -6,9 +6,12 @@ import MenuCard from "./menuCard";
 const RestuarantMenu = () => {
   const params = useParams();
   const { id } = params;
-  const { restaurant, menuList } = useRestuarantMenu(id);
+  const { restaurant, menu } = useRestuarantMenu(id);
+  let menuList=[];
+  (!menu)? <h1>Not available</h1> : menuList =  Object.values(menu).map(item=>item?.card?.info)
+  
   console.log(menuList);
-
+ 
   return (
     <>
     <h1>
@@ -24,7 +27,9 @@ const RestuarantMenu = () => {
         />
       </div>
       <div className="menuList">
-        {menuList.map((item, id) => {
+        
+        { (!menuList) ? <h1>resto is not open </h1>:
+        menuList.map((item, id) => {
           return <MenuCard {...item} key={id} />;
         })}
       </div>

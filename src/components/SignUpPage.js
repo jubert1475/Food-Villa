@@ -16,22 +16,7 @@ const LoginPage = () => {
       
       <div>
         <form id="Form">
-          {/* <label>Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-          />
-          <label>Last Name</label>
-          <input
-            id="lastname"
-            type="text"
-            name="lastname"
-            onChange={formik.handleChange}
-            value={formik.values.lastName}
-            /> */}
+          
           <label>E-Mail</label>
           <input
             id="email"
@@ -49,8 +34,17 @@ const LoginPage = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             />
+            <label>Confirm Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password" 
+            placeholder="Password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            />
             <div>
-            <button style={{margin:"5px"}}>Login</button>
+            <button style={{margin:"5px"}}>Sign Up</button>
             </div>
             
 

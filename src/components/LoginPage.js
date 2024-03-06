@@ -32,6 +32,7 @@ const LoginPage = () => {
             onChange={formik.handleChange}
             value={formik.values.lastName}
             /> */}
+            <h1>Log In to Food-Villa</h1>
           <label>E-Mail</label>
           <input
             id="email"

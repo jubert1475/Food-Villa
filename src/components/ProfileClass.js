@@ -1,5 +1,6 @@
 
 import { Component } from "react";
+import userContext from "../utils/userContex";
 
 class ProfileClass extends Component {
   constructor(props) {
@@ -36,6 +37,10 @@ class ProfileClass extends Component {
         <h2>Name:{this.state.userInfo.name}</h2>
         <h2>Address:{this.state.userInfo.Address}</h2>
         <h1>UserName: {this.props.UserName}</h1> accepting props from parent component;
+
+        <userContext.Consumer>
+          {(value)={user}}
+        </userContext.Consumer>
         
        
       </div>

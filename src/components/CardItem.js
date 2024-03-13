@@ -1,7 +1,7 @@
 //optional chaining {.?}
 //const CardItem = ({restuarant}) this is known as object destructuring so we dont need to use word props.so we can write restuarant.info.name
 //const {name,cuisines,cloudinaryImageId,avgRating}= restuarant.info; //-- this is how we can again destructure the data.so now we can write only name
-import { IMG_CDN_URL } from "./Config";
+import { IMG_CDN_URL } from "../utils/Config";
 
 const CardItem = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
     return (

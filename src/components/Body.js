@@ -11,9 +11,25 @@ import useOnline from "../utils/useOnline";
 
 
 const Body = () => {
+
   const [searchText, setSearchText] = useState("");
   const [filteredRestuarantListData, setFilteredRestaurantListData] = useState([]);
   const [allRestuarantListData, setAllRestaurantListData] = useState([]);
+
+  const handleKeyPress=(event)=>{
+    if(event.key==="Enter"){
+      handleSearch();
+    }
+  }
+
+  const handleSearch=() => {
+    //Filter the list
+    const data = filterData(allRestuarantListData, searchText);
+
+    //update the state
+    setFilteredRestaurantListData(data);
+  }
+
 
   useEffect(() => {
     getRestaurants();  //call API
@@ -57,6 +73,7 @@ const Body = () => {
           type="searchBox"
           className="searchBox"
           value={searchText}
+          onKeyPress={handleKeyPress}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
@@ -64,13 +81,9 @@ const Body = () => {
 
         <button
           className="search-btn"
-          onClick={() => {
-            //Filter the list
-            const data = filterData(allRestuarantListData, searchText);
-
-            //update the state
-            setFilteredRestaurantListData(data);
-          }}
+         
+          onClick={handleSearch}
+         
         >
           Search
         </button>
@@ -82,11 +95,11 @@ const Body = () => {
         ) : (
           filteredRestuarantListData.map((restuarant) => {
             return (
-              <Link to={"restaurant/" + restuarant?.info?.id}>
-                <CardItem {...restuarant.info} key={restuarant?.info?.id} />
+              <Link to={"restaurant/" + restuarant?.info?.id} key={restuarant?.info?.id}>
+                <CardItem  {...restuarant.info}   /> 
               </Link>
             );
-          })
+          } )
         )}
       </div>
     </>
